@@ -50,6 +50,7 @@
 			<p><?php echo date($pizza['created_at']); ?></p>
 			<h5>Ingredients:</h5>
 			<p><?php echo $pizza['ingredients']; ?></p>
+			<a class="brand-text" href="edit.php?id=<?php echo $pizza['id'] ?>">click to edit</a>
 
 			<!-- DELETE FORM -->
 			<form action="details.php" method="POST">
