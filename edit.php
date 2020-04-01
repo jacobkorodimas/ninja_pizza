@@ -67,18 +67,20 @@
 
     <div class="container center grey-text">
     <?php if($pizza): ?>
-		<form action="edit.php" method="POST">
-            <label>Ingredients (comma separated)</label>
-            <input type="hidden" name="id" value="<?php  echo htmlspecialchars($pizza['id']) ?>"">
-            <input type="text" name="ingredients"  autocomplete = "off" value="<?php echo htmlspecialchars($pizza['ingredients']) ?>">
-			<div class="red-text"><?php echo $errors['ingredients']; ?></div>
-			<div class="center">
-				<input type="submit" name="submit" value="Submit" class="btn brand z-depth-0">
-			</div>
-        </form>
-        <?php else: ?>
-			<h5>No such pizza exists.</h5>
-		<?php endif ?>
+        <section class="container grey-text">
+		    <form class = "white" action="edit.php" method="POST">
+                <label>Edit Ingredients (comma separated):</label>
+                <input type="hidden" name="id" value="<?php  echo htmlspecialchars($pizza['id']) ?>"">
+                <input type="text" name="ingredients"  autocomplete = "off" value="<?php echo htmlspecialchars($pizza['ingredients']) ?>">
+			    <div class="red-text"><?php echo $errors['ingredients']; ?></div>
+			    <div class="center">
+				    <input type="submit" name="submit" value="Submit" class="btn brand z-depth-0">
+			    </div>
+            </form>
+            <?php else: ?>
+			    <h5>No such pizza exists.</h5>
+		    <?php endif ?>
+        </section>
 	</div>
 
     <?php include('templates/footer.php'); ?>
